@@ -20,7 +20,7 @@ def test_temp_code():
     browser.get('https://lk.rt.ru')
     # Ожидаем, когда произойдет перенаправление на страницу авторизации b2b
     time.sleep(10)
-    # Находим поле "E-mail или мобильный телефон"
+    # Находим поле "E-mail или мобильный телефон" и вводим email
     search_field_email_phone = browser.find_element(By.XPATH, "//input[@id='address']")
     search_field_email_phone.clear()
     search_field_email_phone.send_keys(valid_email)
@@ -36,24 +36,24 @@ def test_register_new_email():
     registration()
     #Проверяем, что открылась страница Регистрации (по тэгу h1, текст в котором "Регистрация")
     assert browser.find_element(By.TAG_NAME, 'h1').text == "Регистрация"
-    #Находим поле "Имя"
+    #Находим поле "Имя" и вводим
     search_field_name = browser.find_element(By.XPATH, "//input[@name='firstName']")
     search_field_name.clear()
     search_field_name.send_keys('Аа')
-    #Находим поле "Фамилия"
+    #Находим поле "Фамилия" и вводим
     search_field_lastname = browser.find_element(By.XPATH, "//input[@name='lastName']")
     search_field_lastname.clear()
     search_field_lastname.send_keys('Аа')
-    #Пропускаем поле "Город", т.к. он заполняется автоматически г. Москва.
-    #Находим поле "E-mail"
+    #Пропускаем поле "Город", т.к. он заполняется автоматически
+    #Находим поле "E-mail" и вводим
     search_field_email = browser.find_element(By.XPATH, "//input[@id='address']")
     search_field_email.clear()
     search_field_email.send_keys(test_email)
-    #Находим поле "Пароль"
+    #Находим поле "Пароль" и вводим
     search_field_psw = browser.find_element(By.XPATH, "//input[@id='password']")
     search_field_psw.clear()
     search_field_psw.send_keys('12@Ghdjfd')
-    #Находим поле "Подтвердить пароль"
+    #Находим поле "Подтвердить пароль" и вводим
     search_field_psw2 = browser.find_element(By.XPATH, "//input[@id='password-confirm']")
     search_field_psw2.clear()
     search_field_psw2.send_keys('12@Ghdjfd')
@@ -68,24 +68,24 @@ def test_register_existing_email():
     registration()
     # Проверяем, что открылась страница Регистрации (по тэгу h1, текст в котором "Регистрация")
     assert browser.find_element(By.TAG_NAME, 'h1').text == "Регистрация"
-    #Находим поле "Имя"
+    #Находим поле "Имя" и вводим
     search_field_name = browser.find_element(By.XPATH, "//input[@name='firstName']")
     search_field_name.clear()
     search_field_name.send_keys('Аа')
-    #Находим поле "Фамилия"
+    #Находим поле "Фамилия" и вводим
     search_field_lastname = browser.find_element(By.XPATH, "//input[@name='lastName']")
     search_field_lastname.clear()
     search_field_lastname.send_keys('Аа')
-    #Пропускаем поле "Город", т.к. он заполняется автоматически г. Москва.
-    #Находим поле "E-mail"
+    #Пропускаем поле "Город", т.к. он заполняется автоматически
+    #Находим поле "E-mail" и вводим
     search_field_email = browser.find_element(By.XPATH, "//input[@id='address']")
     search_field_email.clear()
     search_field_email.send_keys(valid_email)
-    #Находим поле "Пароль"
+    #Находим поле "Пароль" и вводим
     search_field_psw = browser.find_element(By.XPATH, "//input[@id='password']")
     search_field_psw.clear()
     search_field_psw.send_keys('12@Ghdjfd')
-    #Находим поле "Подтвердить пароль"
+    #Находим поле "Подтвердить пароль" и вводим
     search_field_psw2 = browser.find_element(By.XPATH, "//input[@id='password-confirm']")
     search_field_psw2.clear()
     search_field_psw2.send_keys('12@Ghdjfd')
